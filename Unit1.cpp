@@ -191,6 +191,8 @@ int TForm1::getPosInArray(char *array, int size)
 void __fastcall TForm1::Button5Click(TObject *Sender)
 {
 char *X = new char;
+
+
 }
 //---------------------------------------------------------------------------
 
