@@ -183,6 +183,8 @@ int TForm1::getPosInArray(char *array, int size)
  //	delete tst;
 //   return 0;
 	test [11] = 2;
+	
+	
 
 }
 //---------------------------------------------------------------------------
