@@ -2,13 +2,9 @@ name: SonarCloud
 on:
   push:
     branches:
-      - master
-      - release/*
+      - main
   pull_request:
-    branches:
-      - master
-      - trunk/*
-      - release/*
+    types: [opened, synchronize, reopened]
 jobs:
   build:
     name: Build and analyze
@@ -21,10 +17,6 @@ jobs:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       - name: Install sonar-scanner and build-wrapper
         uses: SonarSource/sonarcloud-github-c-cpp@v1
-        with:
-          args: >
-            -Dsonar.organization=anton234ff
-            -Dsonar.projectKey=anton234ff_testSonarCloudGh
       - name: Run build-wrapper
         run: |
           build-wrapper-win-x86-64 --out-dir ${{ env.BUILD_WRAPPER_OUT_DIR }}<insert_your_clean_build_command>
